@@ -11,12 +11,14 @@ use base64::{
     engine, Engine as _,
 };
 use hmac::{Hmac, Mac};
-use serde::{Serialize, Deserialize};
+use rust_decimal::Decimal;
+use rust_decimal_macros::dec;
+use serde::{Deserialize, Serialize};
 use sha2::Sha256;
 use std::time::{SystemTime, UNIX_EPOCH};
 use std::{env, net::SocketAddr};
 
-const OKEX_API_URL: &str = "https://www.okex.com";
+const OKX_API_URL: &str = "https://www.okx.com";
 pub const OKEX_MINIMUM_WITHDRAWAL_FEE: Decimal = dec!(0.0002);
 pub const OKEX_MAXIMUM_WITHDRAWAL_FEE: Decimal = dec!(0.0004);
 pub const OKEX_MINIMUM_WITHDRAWAL_AMOUNT: Decimal = dec!(0.001);
